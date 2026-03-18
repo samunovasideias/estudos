@@ -6,7 +6,7 @@
  	char cpf[12];
  	int resto,resto2,soma,soma2,i,verify1,verify2;
  	printf("bem vindo ao validador de cpf,digite o cpf:\n");
-  scanf("%11s", cpf);
+  fgets(cpf,12, stdin);
  	soma=0;
  	soma2=0;
  	for(i=0;i<=8;i++){
