@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//vetores(arrays)-cpf
+//vetores verificar cpf
  int main(){
  	char cpf[12];
  	int resto,resto2,soma,soma2,i,verify1,verify2;
