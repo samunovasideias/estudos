@@ -4,6 +4,9 @@
 
 int verificarnum(char numero[]){
 	int i,tam=strlen(numero);
+	if( numero[0]=='\0'){
+		return 1;
+	}
 	for(i=0;i<tam;i++){
 		if(numero[i]<'0' || numero[i]>'9'){
 			return 1;
@@ -19,9 +22,8 @@ int main(){
 		fgets(numero,100,stdin);
 		numero[strcspn(numero,"\n")]='\0';
 		n=verificarnum(numero);
-		if(n!=0 || numero[0]=='\0'){
+		if(n!=0){
 			printf("numero invalido");
-			n=1;
 		}
 	}while(n!=0);
 	printf("numero valido"); 
