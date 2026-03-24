@@ -4,7 +4,7 @@
 #include <stdlib.h>
 void validacao(char cpf[]){
     int i;
-    if(strlen(cpf)!=11){  //vaidar tamanho
+    if(strlen(cpf)!=11){  //validar tamanho
         printf("tamanho do cpf invalido");
         exit(1);
     }
