@@ -2,18 +2,19 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-void validacao(char cpf[]){
+int validacao(char cpf[]){
     int i;
     if(strlen(cpf)!=11){  //validar tamanho
         printf("tamanho do cpf invalido");
-        exit(1);
+        return 1;
     }
     for(i=0;i<=10;i++){   //validação de caracteres permitidos
       if(cpf[i]<'0' || cpf[i]>'9'){
         printf("1cpf invalido,digite apenas numeros");
-        exit(1);
+        return 1;
       }
     }
+    return 0;
   }
   int verificador1(char cpf[]){
       int soma1=0,dv1,i;
@@ -42,20 +43,26 @@ void validacao(char cpf[]){
       return dv2;
   }
 int main(){
-    int c,digiv1,digiv2;
+    int vali,c,digiv1,digiv2;
     char cpf[12];
-    printf("bem vindo ao  validador de cpf,digite seu cpf \n");
+    printf("bem vindo ao  validador de cpf\n");
+    do{
+    printf("digite seu cpf \n");
     fgets(cpf,12,stdin);
-    cpf[strcspn(cpf,"n")]='\0';
-    validacao(cpf);
-    digiv1=verificador1(cpf);
-    digiv2=verificador2(cpf);
+    cpf[strcspn(cpf,"\n")]='\0';
     while((c=getchar()) !='\n' && c!=EOF);
-    if(digiv1==(cpf[9]-'0') && digiv2==(cpf[10]-'0')){
+    vali=validacao(cpf);
+    if(vali==1){
+        printf("cpf com erros de digitacao,digite novamente\n");
+    }else if(vali=0){
+        if(digiv1==(cpf[9]-'0') && digiv2==(cpf[10]-'0')){
         puts("cpf valido");
     }else{
         puts("cpf invalido");
     }
+    }
+    }
+    
   return 0;
   
       
