@@ -15,7 +15,7 @@
   }
   soma=0;
 	soma2=0;
-	for(i=0;i<10;i++){     
+	for(i=0;i<11;i++){     
 		if(cpf[i]<'0' || cpf[i]>'9'){
  		 	printf(" -cpf invalido");
 			return(1);
